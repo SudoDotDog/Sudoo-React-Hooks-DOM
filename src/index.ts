@@ -3,3 +3,6 @@
  * @namespace ReactHooksDOM
  * @description Index
  */
+
+export * from "./batch";
+
