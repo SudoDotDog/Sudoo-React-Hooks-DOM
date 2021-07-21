@@ -17,11 +17,29 @@ npm install @sudoo/react-hooks-dom --save
 
 ## Usage
 
+Call multiple hook update function normally only cause a single re-render.
+
+```ts
+export const MyComponent = () => {
+    setA();
+    setB();
+};
+```
+
+In case of update functions are called within a promise, the following path will also only trigger single component re-render.
+
 ```ts
 import { batchUpdate } from "@sudoo/react-hooks-dom";
 
-batchUpdate(() => {
-    setA();
-    setB();
-});
+export const MyComponent = () => {
+
+    new Promise((resolve: () => void) => {
+
+        batchUpdate(() => {
+            setA();
+            setB();
+        });
+        resolve();
+    });
+};
 ```
