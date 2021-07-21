@@ -14,3 +14,14 @@ yarn add @sudoo/react-hooks-dom
 # Or
 npm install @sudoo/react-hooks-dom --save
 ```
+
+## Usage
+
+```ts
+import { batchUpdate } from "@sudoo/react-hooks-dom";
+
+batchUpdate(() => {
+    setA();
+    setB();
+});
+```
