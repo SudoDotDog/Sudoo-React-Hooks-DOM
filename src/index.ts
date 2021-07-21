@@ -5,4 +5,5 @@
  */
 
 export * from "./batch";
+export * from "./declare";
 
